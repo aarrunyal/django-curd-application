@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'bitcoin_tracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysql.connector.django',  
+        'NAME': 'django-demo',  
+        'USER': 'db',  
+        'PASSWORD': '',  
+        'HOST': '127.0.0.1',  
+        'PORT': '3306', 
     }
 }
 
