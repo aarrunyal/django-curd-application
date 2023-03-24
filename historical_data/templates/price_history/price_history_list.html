@@ -1,0 +1,27 @@
+<h1>Price history</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Date</th>
+    <th>Price</th>
+    <th>Volume</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for price_history in object_list %}
+    <tr>
+    <td>{{ price_history.date }}</td>
+    <td>{{ price_history.price }}</td>
+    <td>{{ price_history.volume }}</td>
+    <td><a href="{% url "price_history_view" price_history.id %}">view</a></td>
+    <td><a href="{% url "price_history_update" price_history.id %}">edit</a></td>
+    <td><a href="{% url "price_history_delete" price_history.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "price_history_form" %}">New</a>
